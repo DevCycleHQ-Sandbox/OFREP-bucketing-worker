@@ -1,0 +1,24 @@
+name = "ofrep-bucketing-example"
+main = "src/main.ts"
+account_id = "fb390958d6eff646d3a341a10cd95706"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+services = [
+  { binding = "OFREP_BUCKETING", service = "ofrep-bucketing-worker" }
+]
+[observability.logs]
+enabled = true
+[env.production]
+route = { pattern = "https://ofrep-bucketing-example.devcycle.com/*", zone_name = "devcycle.com" }
+services = [
+  { binding = "OFREP_BUCKETING", service = "ofrep-bucketing-worker" }
+]
+
+[env.production.observability.logs]
+enabled = true
+[env.production.placement]
+mode = "smart"
+[[rules]]
+type = "ESModule"
+globs = ["**/*.js"]

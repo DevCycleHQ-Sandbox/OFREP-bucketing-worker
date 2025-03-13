@@ -1,0 +1,21 @@
+name = "ofrep-bucketing-worker"
+main = "src/main.ts"
+account_id = "fb390958d6eff646d3a341a10cd95706"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[observability.logs]
+enabled = true
+[env.production]
+route = { pattern = "https://ofrep-bucketing-worker.devcycle.com/*", zone_name = "devcycle.com" }
+
+[env.production.observability.logs]
+enabled = true
+
+[env.production.vars]
+LOG_LEVEL = "debug"
+CF_ACCOUNT_ID = "fb390958d6eff646d3a341a10cd95706"
+CF_ZONE_ID = "023e10572e3e64a88ad0431a85d6b9f0"
+
+[env.production.placement]
+mode = "smart"
