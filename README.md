@@ -1,5 +1,7 @@
 # OFREP Bucketing Worker
 
+Note: This project is a work-in-progress. There are likely bugs and missing features!
+
 This repository contains a Cloudflare Worker that implements the OpenFeature Remote Evaluation Protocol (OFREP) for feature flag evaluation. It provides a bucketing service that can be used with the OpenFeature SDK.
 
 ## Prerequisites
